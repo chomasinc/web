@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chomas Inc. | Consulting for ecommerce, SaaS and consumer startups</title>
+<meta name="description" content="Chomas Inc. provides consulting services to ecommerce, SaaS and consumer startups across the United States.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F3F5F4;
+    --surface: #FFFFFF;
+    --ink: #1C2430;
+    --muted: #5B6573;
+    --line: #D6DDDA;
+    --accent: #0F5C4E;
+    --accent-soft: #D5E6DF;
+    --display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+    --body: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #151B22; --surface: #1C242D; --ink: #E8ECEA; --muted: #A3ADB8;
+      --line: #2E3944; --accent: #6FC2AB; --accent-soft: #1F3A34;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 400 1.0625rem/1.6 var(--body); -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); }
+  a:focus-visible, .btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 1.5rem; }
+
+  header.site { padding: 1.5rem 0; }
+  header.site .wrap { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+  .logo { font: 700 1.35rem/1 var(--display); color: var(--ink); text-decoration: none; letter-spacing: -0.01em; }
+  nav a { color: var(--muted); text-decoration: none; margin-left: 1.5rem; font-weight: 500; }
+  nav a:hover { color: var(--ink); }
+
+  .hero { padding: 4rem 0 5rem; }
+  .hero p.lede { max-width: 34rem; color: var(--muted); font-size: 1.2rem; margin: 0 0 2.5rem; }
+  .markets { list-style: none; margin: 0 0 3rem; padding: 0; border-top: 1px solid var(--line); }
+  .markets li {
+    display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 22rem); gap: 1.5rem;
+    align-items: baseline; padding: 1.1rem 0; border-bottom: 1px solid var(--line);
+  }
+  .markets strong {
+    font: 700 clamp(2.75rem, 8vw, 6.5rem)/0.95 var(--display); letter-spacing: -0.035em;
+  }
+  .markets span { color: var(--muted); }
+  .hero h1 { font: 500 1rem/1.4 var(--body); color: var(--accent); margin: 0 0 1.25rem; }
+
+  .btn {
+    display: inline-block; background: var(--accent); color: var(--surface);
+    padding: 0.9rem 1.5rem; border-radius: 6px; font-weight: 600; text-decoration: none;
+  }
+  .btn:hover { filter: brightness(1.1); }
+  .btn.ghost { background: transparent; color: var(--accent); border: 1.5px solid var(--accent); margin-left: 0.75rem; }
+
+  section.block { padding: 4.5rem 0; border-top: 1px solid var(--line); }
+  h2 { font: 700 clamp(1.8rem, 3.5vw, 2.6rem)/1.1 var(--display); letter-spacing: -0.02em; margin: 0 0 0.75rem; max-width: 20ch; }
+  .intro { color: var(--muted); max-width: 38rem; margin: 0 0 2.5rem; }
+
+  .services { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.5rem 3rem; }
+  .services h3 { font: 700 1.3rem/1.25 var(--display); margin: 0 0 0.4rem; }
+  .services p { margin: 0; color: var(--muted); max-width: 30rem; }
+
+  .steps { list-style: none; counter-reset: step; margin: 0; padding: 0;
+    display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.5rem; }
+  .steps li { counter-increment: step; background: var(--surface); padding: 1.5rem; border-radius: 4px; border: 1px solid var(--line); }
+  .steps li::before { content: counter(step); display: block; font: 700 2rem/1 var(--display); color: var(--accent); margin-bottom: 0.75rem; }
+  .steps h3 { font: 600 1.05rem/1.3 var(--body); margin: 0 0 0.35rem; }
+  .steps p { margin: 0; color: var(--muted); font-size: 0.97rem; }
+
+  .contact { background: var(--accent-soft); border-radius: 8px; padding: 3rem; display: flex; justify-content: space-between; align-items: center; gap: 2rem; flex-wrap: wrap; }
+  .contact h2 { margin: 0 0 0.5rem; }
+  .contact p { margin: 0; color: var(--muted); max-width: 32rem; }
+
+  footer { padding: 3rem 0 3.5rem; color: var(--muted); font-size: 0.95rem; }
+  footer .wrap { display: flex; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; }
+  footer p { margin: 0 0 0.35rem; }
+
+  @media (max-width: 800px) {
+    nav a:not(:last-child) { display: none; }
+    .markets li { grid-template-columns: 1fr; gap: 0.35rem; }
+    .services { grid-template-columns: 1fr; }
+    .steps { grid-template-columns: 1fr 1fr; }
+    .contact { padding: 2rem; }
+  }
+  @media (max-width: 480px) {
+    .steps { grid-template-columns: 1fr; }
+    .btn.ghost { margin: 0.75rem 0 0; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="#">Chomas Inc.</a>
+    <nav aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#how">How it works</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <h1>Consulting for early- and growth-stage startups</h1>
+      <ul class="markets">
+        <li><strong>Ecommerce</strong><span>Conversion, pricing and the path from first sale to repeat customer.</span></li>
+        <li><strong>SaaS</strong><span>Packaging, monetization and product decisions that hold up at scale.</span></li>
+        <li><strong>Consumer</strong><span>Finding the audience, shaping the product and building growth that lasts.</span></li>
+      </ul>
+      <p class="lede">Chomas Inc. works alongside founders and operating teams on the product, pricing and growth questions that decide what happens next.</p>
+      <a class="btn" href="#contact">Book an intro call</a>
+      <a class="btn ghost" href="#services">See services</a>
+    </div>
+  </section>
+
+  <section class="block" id="services">
+    <div class="wrap">
+      <h2>What we help with</h2>
+      <p class="intro">Engagements are scoped to a specific problem, with a clear deliverable and timeline.</p>
+      <div class="services">
+        <div>
+          <h3>Product strategy</h3>
+          <p>Roadmap priorities, customer research and a clear point of view on what to build next and what to stop.</p>
+        </div>
+        <div>
+          <h3>Pricing and monetization</h3>
+          <p>Plan and tier design, price testing and packaging that fits how your customers actually buy.</p>
+        </div>
+        <div>
+          <h3>Growth and go-to-market</h3>
+          <p>Launch planning, positioning, funnel analysis and the channels worth your next dollar.</p>
+        </div>
+        <div>
+          <h3>Advisory retainers</h3>
+          <p>Ongoing, hands-on support for founders who want an experienced operator on call each month.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="how">
+    <div class="wrap">
+      <h2>How an engagement works</h2>
+      <p class="intro">Every project runs under a signed statement of work, so scope, fees and timing are agreed before work begins.</p>
+      <ol class="steps">
+        <li><h3>Intro call</h3><p>A free 30-minute conversation about where you are and what you need.</p></li>
+        <li><h3>Proposal</h3><p>A written scope with deliverables, timeline and a fixed or monthly fee.</p></li>
+        <li><h3>Delivery</h3><p>Working sessions with your team and regular check-ins on progress.</p></li>
+        <li><h3>Handoff</h3><p>Final recommendations and materials your team can keep using.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="contact">
+    <div class="wrap">
+      <div class="contact">
+        <div>
+          <h2>Let's talk about your next move</h2>
+          <p>Tell us a bit about your company and what you're working on. We reply within two business days.</p>
+        </div>
+        <a class="btn" href="mailto:chomasinc@gmail.com?subject=Consulting%20inquiry">Email chomasinc@gmail.com</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <p><strong>Chomas Inc.</strong></p>
+      <p>Consulting services for ecommerce, SaaS and consumer startups.</p>
+      <p>Serving clients across the United States.</p>
+    </div>
+    <div>
+      <p><a href="mailto:chomasinc@gmail.com">chomasinc@gmail.com</a></p>
+      <p><a href="privacy.html">Privacy policy</a> &nbsp;&nbsp; <a href="terms.html">Terms of service</a></p>
+      <p>&copy; 2026 Chomas Inc. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
